@@ -13,7 +13,8 @@ gulp.task('build', function() {
     minifyJs({
       ext : {
         min: '.min.js'
-      }
+      },
+      preserveComments: 'some'
     }),
     //rename({extname: '.min.js'}),
     gulp.dest('./build/')
