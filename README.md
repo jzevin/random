@@ -1,7 +1,9 @@
 # random
-A lightweight random library
+A lightweight random javaScript library
 
 ## usage
+todo: make an npm
+### require
 ```
 var Random = require('./build/random.min.');
 var random = new Random();
