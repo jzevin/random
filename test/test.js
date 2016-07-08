@@ -9,11 +9,12 @@ describe('Random', function() {
     it('should be instance of Random', function() {
       expect(rnd).to.be.instanceOf(Random);
     });
-    it('should respond to int, real, pick, chance', function() {
+    it('should respond to int, real, pick, chance, color', function() {
       expect(rnd).itself.to.respondTo('int');
       expect(rnd).itself.to.respondTo('real');
       expect(rnd).itself.to.respondTo('pick');
       expect(rnd).itself.to.respondTo('chance');
+      expect(rnd).itself.to.respondTo('color');
     });
 
   });
@@ -65,5 +66,25 @@ describe('Random', function() {
       expect(rnd.chance(0)).to.be.false;
     });
   });
+
+  describe('#color()',function(){
+    it('should return rgb color string', function() {
+      expect(rnd.color()).to.match(/rgb\((\d{1,3}),(\d{1,3}),(\d{1,3})\)/);
+      expect(rnd.color('rgb')).to.match(/rgb\((\d{1,3}),(\d{1,3}),(\d{1,3})\)/);
+    });
+    it('should return rgba color string', function() {
+      expect(rnd.color('rgba')).to.match(/rgba\((\d{1,3}),(\d{1,3}),(\d{1,3}),(\d{1,3})\)/);
+    });
+    it('should return hsl color string', function() {
+      expect(rnd.color('hsl')).to.match(/hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g);
+    });
+    it('should return hsla color string', function() {
+      expect(rnd.color('hsla')).to.match(/hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+)%\)/g);
+    });
+    it('should return hex color string', function() {
+      expect(rnd.color('hex')).to.match(/^#[0-9a-f]{3,6}$/i);
+    });
+  });
+
 
 });
