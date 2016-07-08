@@ -30,7 +30,40 @@ describe('Random', function() {
     it('should return a number between -1, 1', function() {
       expect(rnd.int(-1,1)).to.be.above(-2).and.below(2);
     });
-
-
   });
+
+
+  describe('#real()',function(){
+    it('should return 0.0 or 1.0 if no args are given', function() {
+      expect(rnd.real()).to.be.above(-0.1).and.below(1.1);
+    });
+
+    it('should return a number between 1.0, 4.0', function() {
+      expect(rnd.real(1.0,4.0)).to.be.above(0.99).and.below(4.1);
+    });
+
+    it('should return a number between -1.0, 1.0', function() {
+      expect(rnd.real(-1.0,1.0)).to.be.above(-1.1).and.below(1.1);
+    });
+  });
+
+  describe('#pick()',function(){
+    var theArray = [1,2,3,4];
+    it('should return a 1,2,3 or 4 from [1,2,3,4]', function() {
+      expect(rnd.pick(theArray)).to.be.above(0).and.below(5);
+      expect(rnd.pick(theArray)).to.be.above(0).and.below(5);
+      expect(rnd.pick(theArray)).to.be.above(0).and.below(5);
+      expect(rnd.pick(theArray)).to.be.above(0).and.below(5);
+    });
+  });
+
+  describe('#chance()',function(){
+    it('should return true', function() {
+      expect(rnd.chance(100)).to.be.true;
+    });
+    it('should return false', function() {
+      expect(rnd.chance(0)).to.be.false;
+    });
+  });
+
 });

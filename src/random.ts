@@ -11,21 +11,22 @@
 
 class Random {
   constructor(){}
+  private nativeRandom = Math.random;
   //random integer beyween min and max
-  int (min=0,max=1):number {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+  public int (min=0,max=1):number {
+    return Math.floor(this.nativeRandom() * (max - min + 1) + min);
   }
   //random real number between min and max
-  real (min=0.0,max=1.0):number {
-    return Math.random() * (max - min) + min;
+  public real (min=0.0,max=1.0):number {
+    return this.nativeRandom() * (max - min) + min;
+  }
+  //random pick from an array
+  public pick (array):any{
+    return array[this.int(0,array.length-1)];
   }
 
-  pick ():any{
-    return true;
-  }
-
-  chance ():boolean{
-    return true;
+  public chance (percent:number=10):boolean{
+    return percent/100 > this.nativeRandom() ? true : false;
   }
 }
 
