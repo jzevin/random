@@ -22,6 +22,12 @@
   "homepage": "https://github.com/phillyDesignr/random#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "gulp": "^3.9.1",
+    "gulp-minify": "0.0.12",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^2.13.6",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.5.3",
+    "stream-combiner2": "^1.1.1"
   }
 }

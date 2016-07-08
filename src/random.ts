@@ -30,6 +30,4 @@ class Random {
   }
 }
 
-//export const random = new Random();
-//module.exports = new Random();
 export = Random;
