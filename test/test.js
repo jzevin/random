@@ -73,13 +73,13 @@ describe('Random', function() {
       expect(rnd.color('rgb')).to.match(/rgb\((\d{1,3}),(\d{1,3}),(\d{1,3})\)/);
     });
     it('should return rgba color string', function() {
-      expect(rnd.color('rgba')).to.match(/rgba\((\d{1,3}),(\d{1,3}),(\d{1,3}),(\d{1,3})\)/);
+      expect(rnd.color('rgba')).to.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(0\.\d+))?\)$/);
     });
     it('should return hsl color string', function() {
       expect(rnd.color('hsl')).to.match(/hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g);
     });
     it('should return hsla color string', function() {
-      expect(rnd.color('hsla')).to.match(/hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+)%\)/g);
+      expect(rnd.color('hsla')).to.match(/^hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,\s*(\d*(?:\.\d+)?)\)$/);
     });
     it('should return hex color string', function() {
       expect(rnd.color('hex')).to.match(/^#[0-9a-f]{3,6}$/i);
