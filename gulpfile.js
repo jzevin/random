@@ -4,6 +4,9 @@ var gulp = require('gulp'),
     minifyJs = require('gulp-minify'),
     rename = require('gulp-rename'),
     gutil = require('gulp-util');
+    Random = require('./build/random.min.js');
+
+console.log(new Random().color());
 
 gulp.task('build', function() {
   var combined = combiner.obj([

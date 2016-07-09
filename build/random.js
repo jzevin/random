@@ -45,13 +45,13 @@ var Random = (function () {
             return out;
         }
         else if (operation === 'rgba') {
-            return "rgba(" + this.int(0, 255) + "," + this.int(0, 255) + "," + this.int(0, 255) + "," + this.int(0, 255) + ")";
+            return "rgba(" + this.int(0, 255) + "," + this.int(0, 255) + "," + this.int(0, 255) + "," + this.native() + ")";
         }
         else if (operation === 'hsl') {
             return "hsl(" + this.int(0, 360) + "," + this.int(0, 100) + "%," + this.int(0, 100) + "%)";
         }
         else if (operation === 'hsla') {
-            return "hsla(" + this.int(0, 360) + "," + this.int(0, 100) + "%," + this.int(0, 100) + "%," + this.int(0, 100) + "%)";
+            return "hsla(" + this.int(0, 360) + "," + this.int(0, 100) + "%," + this.int(0, 100) + "%," + this.native() + ")";
         }
         else {
             return "rgb(" + this.int(0, 255) + "," + this.int(0, 255) + "," + this.int(0, 255) + ")";
