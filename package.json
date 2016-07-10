@@ -1,8 +1,8 @@
 {
   "name": "tiny-random",
   "version": "1.4.0",
-  "description": "Lightweight random JavaScript Library",
-  "main": "random.js",
+  "description": "Super Lightweight random JavaScript Library",
+  "main": "build/random.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha "
   },
