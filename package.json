@@ -1,6 +1,6 @@
 {
   "name": "tiny-random",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Super Lightweight random JavaScript Library",
   "main": "build/random.js",
   "scripts": {
