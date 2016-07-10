@@ -48,4 +48,5 @@ class Random {
   }
 }
 
+
 export = Random;
