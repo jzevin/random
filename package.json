@@ -20,6 +20,7 @@
     "url": "https://github.com/phillyDesignr/random/issues"
   },
   "homepage": "https://github.com/phillyDesignr/random#readme",
+  "tonicExample": "var Random = require('tiny-random'), random = new Random(); console.log( random.color('rgb') ); console.log( random.int(1,1000) ); console.log( random.pick(['burger','fries','shake']) );",
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
