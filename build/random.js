@@ -12,6 +12,7 @@
 var Random = (function () {
     function Random() {
         this.native = Math.random;
+        this.uniq = this.unique;
     }
     //random integer beyween min and max
     Random.prototype.int = function (min, max) {
@@ -56,6 +57,28 @@ var Random = (function () {
         else {
             return "rgb(" + this.int(0, 255) + "," + this.int(0, 255) + "," + this.int(0, 255) + ")";
         }
+    };
+    Random.prototype.unique = function (array, howMany) {
+        if (howMany === void 0) { howMany = 0; }
+        if (howMany > array.length)
+            return false;
+        if (howMany === 0)
+            howMany = array.length;
+        var results = [];
+        while (results.length < howMany) {
+            var randomObj = this.pick(array);
+            var found = false;
+            for (var i = 0; i < results.length; i++) {
+                if (results[i] == randomObj) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                results.push(randomObj);
+            }
+        }
+        return results;
     };
     return Random;
 }());

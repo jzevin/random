@@ -9,12 +9,14 @@ describe('Random', function() {
     it('should be instance of Random', function() {
       expect(rnd).to.be.instanceOf(Random);
     });
-    it('should respond to int, real, pick, chance, color', function() {
+    it('should respond to int, real, pick, chance, color, unique, uniq', function() {
       expect(rnd).itself.to.respondTo('int');
       expect(rnd).itself.to.respondTo('real');
       expect(rnd).itself.to.respondTo('pick');
       expect(rnd).itself.to.respondTo('chance');
       expect(rnd).itself.to.respondTo('color');
+      expect(rnd).itself.to.respondTo('unique');
+      expect(rnd).itself.to.respondTo('uniq');
     });
 
   });
@@ -60,10 +62,10 @@ describe('Random', function() {
 
   describe('#chance()',function(){
     it('should return true', function() {
-      expect(rnd.chance(100)).to.be.true;
+      expect(rnd.chance(100)).to.be.equal(true);
     });
     it('should return false', function() {
-      expect(rnd.chance(0)).to.be.false;
+      expect(rnd.chance(0)).to.be.equal(false);
     });
   });
 
@@ -86,5 +88,28 @@ describe('Random', function() {
     });
   });
 
+  describe('#unique()',function(){
+    it('should return false', function() {
+      expect(rnd.unique([1,2],3)).to.equal(false);
+    });
+    it('should = 1', function() {
+      expect(rnd.unique([1],1)[0]).to.equal(1);
+    });
+    it('should = 1', function() {
+      expect(rnd.unique([1,2,3],3).sort()[0]).to.equal(1);
+    });
+    it('should = 2', function() {
+      expect(rnd.unique([1,2,3],3).sort()[1]).to.equal(2);
+    });
+    it('should = 3', function() {
+      expect(rnd.unique([1,2,3],3).sort()[2]).to.equal(3);
+    });
+    it('should have a length of 5', function() {
+      expect(rnd.unique([1,2,3,4,5,6,7,8,9,10],5).length).to.equal(5);
+    });
+    it('should = "apple"', function() {
+      expect(rnd.unique(['grape','banana','cherry','apple'],4).sort()[0]).to.equal('apple');
+    });
+  });
 
 });

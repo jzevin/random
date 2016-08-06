@@ -11,8 +11,10 @@
 
 class Random {
   public native;
+  public uniq;
   constructor(){
     this.native = Math.random;
+    this.uniq = this.unique;
   }
   //random integer beyween min and max
   public int (min=0,max=1):number {
@@ -45,6 +47,26 @@ class Random {
     } else {
       return `rgb(${this.int(0,255)},${this.int(0,255)},${this.int(0,255)})`;
     }
+  }
+
+  public unique (array, howMany:number=0):any {
+    if(howMany > array.length)return false
+    if(howMany === 0)howMany=array.length;
+    const results = [];
+      while (results.length < howMany) {
+        let randomObj = this.pick(array);
+        let found = false;
+        for (let i = 0; i < results.length; i++) {
+          if (results[i] == randomObj) {
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          results.push(randomObj);
+        }
+      }
+    return results;
   }
 }
 
