@@ -1,11 +1,11 @@
 /*!
- * Random JavaScript Library v1.0.0
+ * Random JavaScript Library v1.5.1
  * Jeremy Zevin
  *
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
- * Date: 7/8/16
+ * Date: 4/22/17
  *
  */
 
@@ -71,4 +71,22 @@ class Random {
 }
 
 
-export = Random;
+//export = Random;
+
+
+declare var define: any;
+declare var module: any;
+
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+   module.exports = Random;
+ }
+ else {
+   if (typeof define === 'function' && define.amd) {
+     define([], function() {
+       return Random;
+     });
+   }
+   else {
+     (window as any)['Random'] = Random;
+   }
+ }
