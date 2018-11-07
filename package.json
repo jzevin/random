@@ -2,7 +2,7 @@
   "name": "tiny-random",
   "version": "1.6.0",
   "description": "Super Lightweight random JavaScript Library",
-  "main": "build/random.js",
+  "main": "dist/random.js",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "testWithCoverage": "nyc -r lcov -e .ts -x \"*.test.ts\" mocha -r ts-node/register tests/**/*.test.ts && nyc report",
