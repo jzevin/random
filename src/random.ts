@@ -1,5 +1,5 @@
 /*!
- * Random JavaScript Library v1.6.0
+ * Random JavaScript Library v1.6.1
  * Jeremy Zevin
  *
  * Released under the MIT license

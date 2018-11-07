@@ -1,11 +1,11 @@
 "use strict";
 /*!
- * Random JavaScript Library v1.5.1
+ * Random JavaScript Library v1.6.1
  * Jeremy Zevin
  *
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
- *
+ *npm
  * Date: 10/6/18
  *
  */
