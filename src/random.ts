@@ -1,15 +1,15 @@
 /*!
- * Random JavaScript Library v1.5.1
+ * Random JavaScript Library v1.6.0
  * Jeremy Zevin
  *
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
- *
- * Date: 4/22/17
+ *npm
+ * Date: 10/6/18
  *
  */
 
-class Random {
+export class Random {
   public native;
   public uniq;
   constructor(){
@@ -25,7 +25,7 @@ class Random {
     return this.native() * (max - min) + min;
   }
   //random pick from an array
-  public pick (array):any{
+  public pick (array:any[]):any{
     return array[this.int(0,array.length-1)];
   }
   //boolean result based on result of expression
@@ -69,24 +69,3 @@ class Random {
     return results;
   }
 }
-
-
-//export = Random;
-
-
-declare var define: any;
-declare var module: any;
-
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-   module.exports = Random;
- }
- else {
-   if (typeof define === 'function' && define.amd) {
-     define([], function() {
-       return Random;
-     });
-   }
-   else {
-     (window as any)['Random'] = Random;
-   }
- }

@@ -1,10 +1,13 @@
 {
   "name": "tiny-random",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "Super Lightweight random JavaScript Library",
   "main": "build/random.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha "
+    "test": "mocha -r ts-node/register tests/**/*.test.ts",
+    "testWithCoverage": "nyc -r lcov -e .ts -x \"*.test.ts\" mocha -r ts-node/register tests/**/*.test.ts && nyc report",
+    "dev": "tsc",
+    "build": "tsc && uglifyjs dist/random.js -o dist/random.min.js --comments '/^!/'"
   },
   "repository": {
     "type": "git",
@@ -22,13 +25,14 @@
   "homepage": "https://github.com/phillyDesignr/random#readme",
   "tonicExample": "var Random = require('tiny-random'), random = new Random(); console.log( random.color('rgb') ); console.log( random.int(1,1000) ); console.log( random.pick(['burger','fries','shake']) );",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "gulp": "^3.9.1",
-    "gulp-minify": "0.0.12",
-    "gulp-rename": "^1.2.2",
-    "gulp-typescript": "^2.13.6",
-    "gulp-util": "^3.0.7",
-    "mocha": "^2.5.3",
-    "stream-combiner2": "^1.1.1"
-  }
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6",
+    "uglify-js": "^3.4.9"
+  },
+  "dependencies": {}
 }

@@ -1,6 +1,5 @@
-var assert = require('chai').assert;
-var expect = require('chai').expect;
-var Random = require('../build/random.js');
+import {assert, expect} from 'chai';
+import {Random} from '../src/random';
 var rnd = new Random();
 
 describe('Random', function() {

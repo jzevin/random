@@ -1,3 +1,4 @@
+"use strict";
 /*!
  * Random JavaScript Library v1.5.1
  * Jeremy Zevin
@@ -5,10 +6,11 @@
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
- * Date: 4/22/17
+ * Date: 10/6/18
  *
  */
-var Random = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var Random = /** @class */ (function () {
     function Random() {
         this.native = Math.random;
         this.uniq = this.unique;
@@ -81,16 +83,5 @@ var Random = (function () {
     };
     return Random;
 }());
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = Random;
-}
-else {
-    if (typeof define === 'function' && define.amd) {
-        define([], function () {
-            return Random;
-        });
-    }
-    else {
-        window['Random'] = Random;
-    }
-}
+exports.Random = Random;
+//# sourceMappingURL=random.js.map
