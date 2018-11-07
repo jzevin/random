@@ -4,6 +4,9 @@
 
 [![Travis Build](https://img.shields.io/travis/phillyDesignr/random.svg?style=flat-square)](https://travis-ci.org/phillyDesignr/random) [![License](https://img.shields.io/npm/l/express.svg?maxAge=2592000&style=flat-square)](https://github.com/Raathigesh/Atmo/blob/master/LICENSE) [![NPM Version](https://img.shields.io/npm/v/tiny-random.svg?style=flat-square)](https://www.npmjs.com/package/tiny-random)
 
+## Demo
+[StackBlitz Demo](https://stackblitz.com/edit/tiny-random-1-6-1?file=index.ts)
+
 ## usage (Node.js)
 
 ### require
