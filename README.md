@@ -9,7 +9,7 @@
 ### require
 
 ```
-var Random = require('tiny-random');
+import { Random } from 'tiny-random';
 var random = new Random();
 ```
 
